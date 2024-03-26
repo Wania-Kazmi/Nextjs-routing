@@ -1,36 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Route Groups
 
-## Getting Started
+1. Nested folders are normally mapped to the URL paths.
 
-First, run the development server:
+## What if you don't want the folder to be included in the URL's path structure??
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- For this we will make <b> Route Groups </b> to prevent the folder from being included in the route's URL path.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Usage:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This allows you to organize your route segments and project files into logical groups without affecting the URL path structure.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- Organizing routes into groups e.g. by site section, intent, or team.
+- Enabling nested layouts in the same route segment level:
+  - Creating multiple nested layouts in the same segment, including multiple root layouts
+  - Adding a layout to a subset of routes in a common segment
 
-## Learn More
+## How to create a route group?
 
-To learn more about Next.js, take a look at the following resources:
+By wrapping a folder's name in parenthesis: (folderName)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+# Dynamic Routing:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+When you don't know the exact segment names ahead of time and want to create routes from dynamic data, you can use Dynamic Segments that are filled in at request time or prerendered at build time.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## How to create Dynamic segments?
+* By wrapping a folder's name in square brackets: [folderName]. For example, [id] or [slug].
+* Dynamic Segments are passed as the params prop to layout, page, route, and generateMetadata functions.
